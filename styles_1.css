@@ -1,0 +1,118 @@
+/* styles_1.css */
+
+/* Общие стили для body */
+body {
+    font-family: Arial, sans-serif;
+    /* Шрифт для текста */
+    background-color: #f4f4f4;
+    /* Цвет фона */
+    color: #333;
+    /* Цвет текста */
+    margin: 0;
+    /* Убираем отступы по умолчанию */
+    padding: 0;
+    /* Убираем внутренние отступы по умолчанию */
+    display: flex;
+    /* Используем flexbox для центрирования */
+    justify-content: center;
+    /* Горизонтальное центрирование */
+    align-items: center;
+    /* Вертикальное центрирование */
+    height: 100vh;
+    /* Высота на весь экран */
+}
+
+/* Форматирование заголовка */
+h2 {
+    margin-bottom: 20px;
+    /* Отступ снизу */
+    color: #007bff;
+    /* Цвет заголовка */
+    margin: 25px;
+}
+
+/* Форматирование формы */
+form {
+    background-color: white;
+    /* Белый цвет фона формы */
+    padding: 20px;
+    /* Внутренние отступы */
+    border-radius: 5px;
+    /* Скругление углов */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Тень для формы */
+}
+
+/* Форматирование элементов формы */
+label {
+    font-weight: bold;
+    /* Полужирный текст для меток */
+    display: block;
+    /* Сделать метки блочными элементами */
+    margin-bottom: 5px;
+    /* Отступ снизу для меток */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    /* Ширина на 100% относительно родителя */
+    padding: 10px;
+    /* Внутренние отступы */
+    margin-bottom: 15px;
+    /* Отступ снизу */
+    border: 1px solid #ccc;
+    /* Серый бордер */
+    border-radius: 4px;
+    /* Скругление углов для полей ввода */
+    box-sizing: border-box;
+    /* Включаем внутренние отступы в ширину */
+}
+
+/* Стили для кнопки отправки */
+input[type="submit"] {
+    background-color: #567392;
+    /* Цвет фона кнопки */
+    color: white;
+    /* Цвет текста кнопки */
+    border: none;
+    /* Без бордера */
+    padding: 10px 15px;
+    /* Внутренние отступы */
+    border-radius: 4px;
+    /* Скругление углов */
+    cursor: pointer;
+    /* Указатель при наведении */
+    font-size: 16px;
+    /* Размер шрифта */
+}
+
+
+input[type="submit"]:hover {
+    background-color: #007bff;
+    /* Цвет кнопки при наведении */
+}
+
+.button {
+    background-color: #567392;
+    /* Цвет фона кнопки */
+    color: white;
+    /* Цвет текста кнопки */
+    text-decoration: none;
+    /* Убираем подчеркивание текста */
+    padding: 10px 15px;
+    /* Внутренние отступы */
+    border-radius: 4px;
+    /* Скругление углов */
+    cursor: pointer;
+    /* Указатель при наведении */
+    font-size: 16px;
+    /* Размер шрифта */
+    display: inline-block;
+    /* Позволяет добавлять отступы и размеры */
+}
+
+.button:hover {
+    background-color: #007bff;
+    /* Цвет кнопки при наведении */
+}
