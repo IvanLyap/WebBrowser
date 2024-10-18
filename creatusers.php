@@ -23,6 +23,8 @@ require 'creatusers_p.php';
         <input type="submit" value="Зарегистрироваться">
         <a href="Home.php" class="button">Назад</a>
     </form>
+
+    
 </body>
 
 </html>
