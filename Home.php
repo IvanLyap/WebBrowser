@@ -1,12 +1,17 @@
 <?php
 require 'db.php'; // Подключение к базе данны
-
-$sql = "SELECT * FROM books"; 
+$sql = "SELECT * FROM books"; // Замените 'books' на название вашей таблицы
 $result = $conn->query($sql);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
-
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user']);
+$userName = $_SESSION['user'] ?? 'Гость';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +22,15 @@ $result = $conn->query($sql);
 <body>
 
     <header>
-        <h1>Добро пожаловать в Библиотеку</h1>
+        <h1>Добро пожаловать в Библиотеку, <?php echo htmlspecialchars($userName); ?>!</h1>
+        <?php if ($isLoggedIn): ?>
         <div class="button_class">
-            <a href="login.html" class="button">Вход</a>
+                <a href="logout.php" class="button">Выход</a>
+            <?php else: ?>
+                <a href="auto.php" class="button">Вход</a>
             <a href="creatusers.php" class="button">Регистрация</a>
         </div>
+        <?php endif; ?>
     </header>
 
     <div class="container">
@@ -66,8 +75,25 @@ $result = $conn->query($sql);
     <?php else: ?>
         <p>Книг нет в наличии.</p>
     <?php endif; ?>
-</div>
-</div>
+    </div>
+
+    <div id="myEd" class="wind">
+        <div class="wind_screen">
+            <span class="close">&times;</span>
+            <form action="edit_book.php" method="post">
+                <input type="hidden" id="id" name="nn" value="">
+                <label for="input1">Автор:</label><br>
+                <input type="text" id="author" name="author" required><br><br>
+                <label for="input2">Название:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="input1">Год:</label><br>
+                <input type="text" id="year" name="year" required><br><br>
+                <label for="input1">Количество:</label><br>
+                <input type="text" id="quantity" name="quantity" required><br><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
+
 </body>
 <script src="script.js"></script>
-</html>

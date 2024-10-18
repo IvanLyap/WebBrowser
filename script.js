@@ -25,14 +25,41 @@
     }
 
     function editBook(id) {
-        // Логика для изменения книги
-        alert('Изменить книгу с ID: ' + id);
+        modal_edit.style.display = "block";
+        document.getElementById('id').value = id;
     }
+
+    function deleteBook(nn) {
+        if (confirm('Вы уверены, что хотите удалить книгу с номером ' + nn + '?')) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "delete_book.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     
-    function deleteBook(id) {
-        // Логика для удаления книги
-        if(confirm('Вы уверены, что хотите удалить книгу с ID: ' + id + '?')) {
-            // Здесь можно реализовать AJAX-запрос или редирект на сервер для удаления
-            alert('Книга с ID ' + id + ' удалена.');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    alert(xhr.responseText);
+                    location.reload();
+                }
+            };
+    
+            xhr.send("nn=" + nn);
+        }
+    }
+
+    // Получаем модальное окно
+    var modal_edit = document.getElementById("myEd");
+
+    // Получаем элемент <span>, который закрывает модальное окно
+    var span = document.getElementsByClassName("close")[0];
+
+    // При нажатии на <span> (x), закрываем модальное окно
+    span.onclick = function() {
+        modal_edit.style.display = "none";
+    }
+
+    // При нажатии в любом месте вне модального окна закрываем его
+    window.onclick = function(event) {
+        if (event.target == modal_edit) {
+            modal_edit.style.display = "none";
         }
     }
