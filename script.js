@@ -25,8 +25,8 @@
     }
 
     function editBook(id) {
-        // Здесь можно реализовать логику редактирования книги
-        alert('Редактировать книгу с ID: ' + id);
+        modal_edit.style.display = "block";
+        document.getElementById('id').value = id;
     }
 
     function deleteBook(nn) {
@@ -49,19 +49,11 @@
     // Получаем модальное окно
     var modal_edit = document.getElementById("myEd");
 
-    // Получаем кнопку, которая открывает модальное окно
-    var edit_btn = document.getElementById("add_button");
-
     // Получаем элемент <span>, который закрывает модальное окно
     var span = document.getElementsByClassName("close")[0];
 
-    // При нажатии на кнопку открываем модальное окно
-    modal_edit.onclick = function() {
-        modal_edit.style.display = "block";
-    }
-
     // При нажатии на <span> (x), закрываем модальное окно
-    edit_btn.onclick = function() {
+    span.onclick = function() {
         modal_edit.style.display = "none";
     }
 

@@ -81,6 +81,7 @@ $userName = $_SESSION['user'] ?? 'Гость';
         <div class="wind_screen">
             <span class="close">&times;</span>
             <form action="edit_book.php" method="post">
+                <input type="hidden" id="id" name="nn" value="">
                 <label for="input1">Автор:</label><br>
                 <input type="text" id="author" name="author" required><br><br>
                 <label for="input2">Название:</label><br>
