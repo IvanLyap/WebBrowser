@@ -1,3 +1,9 @@
+<?php
+require 'db.php'; // Подключение к базе данны
+
+$sql = "SELECT * FROM books"; 
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -43,9 +49,25 @@
             </form>
         </div>
     </div>
+
     <h2>Доступные книги</h2>
-
-
+    <div class="book-list">
+    <?php if ($result->num_rows > 0): ?>
+        <?php while ($book = $result->fetch_assoc()): ?>
+            <div class="book">
+                <p>Название: <?php echo htmlspecialchars($book['name']); ?></p>
+                <p>Автор: <?php echo htmlspecialchars($book['author']); ?></p>
+                <p>Год: <?php echo htmlspecialchars($book['year']); ?></p>
+                <p>Количество: <?php echo htmlspecialchars($book['quantity']); ?></p>
+                <button onclick="editBook(<?php echo htmlspecialchars($book['nn']); ?>)">Изменить</button>
+                <button onclick="deleteBook(<?php echo htmlspecialchars($book['nn']); ?>)">Удалить</button>
+            </div>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p>Книг нет в наличии.</p>
+    <?php endif; ?>
+</div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>
