@@ -97,4 +97,3 @@ $userName = $_SESSION['user'] ?? 'Гость';
 
 </body>
 <script src="script.js"></script>
-</html>
