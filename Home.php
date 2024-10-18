@@ -58,6 +58,7 @@ $userName = $_SESSION['user'] ?? 'Гость';
             </form>
         </div>
     </div>
+
     <h2>Доступные книги</h2>
     <div class="book-list">
     <?php if ($result->num_rows > 0): ?>
@@ -74,6 +75,23 @@ $userName = $_SESSION['user'] ?? 'Гость';
     <?php else: ?>
         <p>Книг нет в наличии.</p>
     <?php endif; ?>
+    </div>
+
+    <div id="myEd" class="wind">
+        <div class="wind_screen">
+            <span class="close">&times;</span>
+            <form action="edit_book.php" method="post">
+                <label for="input1">Автор:</label><br>
+                <input type="text" id="author" name="author" required><br><br>
+                <label for="input2">Название:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="input1">Год:</label><br>
+                <input type="text" id="year" name="year" required><br><br>
+                <label for="input1">Количество:</label><br>
+                <input type="text" id="quantity" name="quantity" required><br><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
     </div>
 
 </body>
