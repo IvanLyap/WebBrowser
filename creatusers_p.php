@@ -1,6 +1,6 @@
 <?php
 require 'db.php'; // Подключение к базе данных
-
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Получаем данные из формы
     $username = $_POST['username'];
@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Выполняем запрос
         if ($stmt->execute()) {
             echo "Регистрация успешна!";
+            $_SESSION['user'] = $username;
+            header('Location: Home.php');
         } else {
             echo "Ошибка: " . $stmt->error;
         }

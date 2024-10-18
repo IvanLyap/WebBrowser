@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user']);
+$userName = $_SESSION['user'] ?? 'Гость';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
