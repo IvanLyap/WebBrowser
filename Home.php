@@ -30,9 +30,30 @@ $userName = $_SESSION['user'] ?? 'Гость';
 
 
     </div>
+
+    <div class="user_buttons">
+    <button class="button" id="add_button">Добавить</button>
+    </div> 
+
+    <div id="myAdd" class="wind">
+        <div class="wind_screen">
+            <span class="close">&times;</span>
+            <form action="add_book.php" method="post">
+                <label for="input1">Автор:</label><br>
+                <input type="text" id="author" name="author" required><br><br>
+                <label for="input2">Название:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="input1">Год:</label><br>
+                <input type="text" id="year" name="year" required><br><br>
+                <label for="input1">Количество:</label><br>
+                <input type="text" id="quantity" name="quantity" required><br><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
     <h2>Доступные книги</h2>
 
 
 </body>
-
+<script src="script.js"></script>
 </html>
