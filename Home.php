@@ -11,11 +11,15 @@
 <body>
 
     <header>
-        <h1>Добро пожаловать в Библиотеку</h1>
+        <h1>Добро пожаловать в Библиотеку, <?php echo htmlspecialchars($userName); ?>!</h1>
+        <?php if ($isLoggedIn): ?>
         <div class="button_class">
-            <a href="login.html" class="button">Вход</a>
+                <a href="logout.php" class="button">Выход</a>
+            <?php else: ?>
+                <a href="auto.php" class="button">Вход</a>
             <a href="creatusers.php" class="button">Регистрация</a>
         </div>
+        <?php endif; ?>
     </header>
 
     <div class="container">
