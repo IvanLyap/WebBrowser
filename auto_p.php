@@ -9,19 +9,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($username) && !empty($password)) {
         // Подготавливаем SQL-запрос для проверки пользователя
-        $stmt = $conn->prepare("SELECT password FROM users_table WHERE user_name = ?");
+        $stmt = $conn->prepare("SELECT password,role  FROM users_table WHERE user_name = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($stored_password);
+            $stmt->bind_result($stored_password, $role);
             $stmt->fetch();
 
             // Проверяем пароль (не забудьте, что пароль теперь не хешируется)
             if ($password === $stored_password) {
                 echo "Авторизация успешна!";
                 $_SESSION['user'] = $username;
+                $_SESSION['role'] = $role;
                 header('Location: Home.php');
                 // Здесь можно установить сессию
             } else {

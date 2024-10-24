@@ -27,11 +27,13 @@ header {
     text-decoration: none;
     border-radius: 5px;
 }
-.users_button{
+
+.users_button {
     display: flex;
     justify-content: center;
 }
-.users-list{
+
+.users-list {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -39,7 +41,8 @@ header {
     flex-wrap: wrap;
     align-content: center;
 }
-.user{
+
+.user {
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -49,7 +52,8 @@ header {
     color: #ffffff;
     width: 250px
 }
-.user button{
+
+.user button {
     align-self: center;
     width: 50%;
 }
