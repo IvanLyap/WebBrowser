@@ -42,6 +42,24 @@ $userName = $_SESSION['user'] ?? 'Гость';
     <div class="user_buttons">
     <button class="button" id="add_button">Добавить</button>
     </div> 
+    
+    <div id="myEd" class="wind">
+        <div class="wind_screen">
+            <span class="close" id="edit_close">&times;</span>
+            <form action="edit_book.php" method="post">
+                <input type="hidden" id="id" name="nn" value="">
+                <label>Автор:</label><br>
+                <input type="text" id="author" name="author" required><br><br>
+                <label>Название:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label>Год:</label><br>
+                <input type="text" id="year" name="year" required><br><br>
+                <label>Количество:</label><br>
+                <input type="text" id="quantity" name="quantity" required><br><br>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
+    </div>
 
     <div id="myAdd" class="wind">
         <div class="wind_screen">
@@ -78,23 +96,7 @@ $userName = $_SESSION['user'] ?? 'Гость';
     <?php endif; ?>
     </div>
 
-    <div id="myEd" class="wind">
-        <div class="wind_screen">
-            <span class="close" id="edit_close">&times;</span>
-            <form action="edit_book.php" method="post">
-                <input type="hidden" id="id" name="nn" value="">
-                <label>Автор:</label><br>
-                <input type="text" id="author" name="author" required><br><br>
-                <label>Название:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label>Год:</label><br>
-                <input type="text" id="year" name="year" required><br><br>
-                <label>Количество:</label><br>
-                <input type="text" id="quantity" name="quantity" required><br><br>
-                <input type="submit" value="Отправить">
-            </form>
-        </div>
-    </div>
+    
 
 </body>
 <script src="script.js"></script>
