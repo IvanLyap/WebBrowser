@@ -1,0 +1,199 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+h1 {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, #007bff, #00b3ff);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Кнопки */
+.button {
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.button_add {
+    background: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button_exit {
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.button_add {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button_d:hover {
+    background-color: #ff0c0c;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button_exit:hover {
+    background-color: #ff0c0c;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Список книг */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    width: 95%;
+    margin: 20px auto;
+    /* Центрирование контейнера по горизонтали */
+    justify-content: center;
+    /* Выравнивание сетки по центру */
+}
+
+.book {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.book:hover {
+    transform: scale(1.1) rotate(3deg);
+    /* Увеличение и вращение карточки */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Увеличение тени */
+}
+
+/* Дополнительные эффекты для текста внутри карточки */
+.book:hover p {
+    color: #007bff;
+}
+
+/* Плавность перехода */
+.book {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Модальные окна */
+.wind {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s;
+}
+
+.wind_screen {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-out;
+}
+
+.wind_screen.show {
+    transform: scale(1.05);
+}
+
+.wind_input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+input[type="text"],
+input[type="submit"] {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    color: #888;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
