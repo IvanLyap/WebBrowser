@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
-    // Получаем модальное окно
+// Получаем модальное окно
     var modal = document.getElementById("myAdd");
     var modal_edit = document.getElementById("myEd");
     var btn = document.getElementById("add_button");
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     btn.onclick = function() {
         modal.style.display = "block";
     }
-    
+
     edit_span.onclick = function() {
         modal_edit.style.display = "none";
     }
@@ -26,10 +25,6 @@ document.addEventListener("DOMContentLoaded", function(){
             modal_edit.style.display = "none";
         }
     }
-
-    
-
-});
 function editBook(id) {
     modal_edit.style.display = "block";
     document.getElementById('id').value = id;
