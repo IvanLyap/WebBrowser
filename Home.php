@@ -26,6 +26,7 @@ $userName = $_SESSION['user'] ?? 'Гость';
         <?php if ($isLoggedIn): ?>
         <div class="button_class">
                 <a href="logout.php" class="button">Выход</a>
+                <a href="delete_user.php" class="button">Удалить пользователя</a>
             <?php else: ?>
                 <a href="auto.php" class="button">Вход</a>
             <a href="creatusers.php" class="button">Регистрация</a>
