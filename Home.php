@@ -45,15 +45,15 @@ $userName = $_SESSION['user'] ?? 'Гость';
 
     <div id="myAdd" class="wind">
         <div class="wind_screen">
-            <span class="close">&times;</span>
+            <span class="close" id = "add_close">&times;</span>
             <form action="add_book.php" method="post">
-                <label for="input1">Автор:</label><br>
+                <label>Автор:</label><br>
                 <input type="text" id="author" name="author" required><br><br>
-                <label for="input2">Название:</label><br>
+                <label>Название:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
-                <label for="input1">Год:</label><br>
+                <label>Год:</label><br>
                 <input type="text" id="year" name="year" required><br><br>
-                <label for="input1">Количество:</label><br>
+                <label>Количество:</label><br>
                 <input type="text" id="quantity" name="quantity" required><br><br>
                 <input type="submit" value="Отправить">
             </form>
@@ -80,16 +80,16 @@ $userName = $_SESSION['user'] ?? 'Гость';
 
     <div id="myEd" class="wind">
         <div class="wind_screen">
-            <span class="close">&times;</span>
+            <span class="close" id="edit_close">&times;</span>
             <form action="edit_book.php" method="post">
                 <input type="hidden" id="id" name="nn" value="">
-                <label for="input1">Автор:</label><br>
+                <label>Автор:</label><br>
                 <input type="text" id="author" name="author" required><br><br>
-                <label for="input2">Название:</label><br>
+                <label>Название:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
-                <label for="input1">Год:</label><br>
+                <label>Год:</label><br>
                 <input type="text" id="year" name="year" required><br><br>
-                <label for="input1">Количество:</label><br>
+                <label>Количество:</label><br>
                 <input type="text" id="quantity" name="quantity" required><br><br>
                 <input type="submit" value="Отправить">
             </form>
